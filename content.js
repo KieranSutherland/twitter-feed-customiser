@@ -1,6 +1,6 @@
 let settings = {
     removeVerified: true,
-    removeVideos: true
+    removeVideos: false
 };
 
 // Track processing state
