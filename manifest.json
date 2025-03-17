@@ -3,7 +3,7 @@
     "version": "1.0",
     "description": "Removes posts based on user configuration",
     "manifest_version": 3,
-    "permissions": ["activeTab", "scripting", "storage"],
+    "permissions": ["activeTab", "scripting", "storage", "host"],
     "action": {
       "default_popup": "popup.html",
       "default_title": "Twitter Feed Customiser Settings",
