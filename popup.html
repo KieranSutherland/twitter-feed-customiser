@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Twitter Feed Customiser Settings</title>
+  <style>
+    body {
+      width: 220px;
+      padding: 15px;
+      font-family: Arial, sans-serif;
+    }
+    .setting-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      align-items: center;
+    }
+    h1 {
+      font-size: 16px;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+    button {
+      background-color: #4285f4;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #3367d6;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 20px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 20px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: #4285f4;
+    }
+    input:checked + .slider:before {
+      transform: translateX(20px);
+    }
+  </style>
+</head>
+<body>
+  <h1>Twitter Feed Customiser Settings</h1>
+  
+  <div class="setting-row">
+    <span>Remove verified posts</span>
+    <label class="switch">
+      <input type="checkbox" id="removeVerified">
+      <span class="slider"></span>
+    </label>
+  </div>
+  
+  <div class="setting-row">
+    <span>Remove video posts</span>
+    <label class="switch">
+      <input type="checkbox" id="removeVideos">
+      <span class="slider"></span>
+    </label>
+  </div>
+  
+  <button id="apply">Apply Changes</button>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

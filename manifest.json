@@ -1,0 +1,19 @@
+{
+    "name": "Twitter Feed Customiser",
+    "version": "1.0",
+    "description": "Removes posts based on user configuration",
+    "manifest_version": 3,
+    "permissions": ["activeTab", "scripting", "storage"],
+    "action": {
+      "default_popup": "popup.html",
+      "default_title": "Twitter Feed Customiser Settings",
+      "default_icon": "favicon.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://*/*"],
+        "js": ["content.js"],
+        "run_at": "document_idle"
+      }
+    ]
+  }
