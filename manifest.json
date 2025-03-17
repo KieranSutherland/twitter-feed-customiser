@@ -3,17 +3,31 @@
     "version": "1.0",
     "description": "Removes posts based on user configuration",
     "manifest_version": 3,
-    "permissions": ["activeTab", "scripting", "storage", "host"],
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "storage",
+        "host"
+    ],
     "action": {
-      "default_popup": "popup.html",
-      "default_title": "Twitter Feed Customiser Settings",
-      "default_icon": "favicon.png"
+        "default_popup": "popup.html",
+        "default_title": "Twitter Feed Customiser Settings",
+        "default_icon": "favicon.png"
     },
+    "host_permissions": [
+        "https://x.com/home",
+        "https://twitter.com/home"
+    ],
     "content_scripts": [
-      {
-        "matches": ["*://*/*"],
-        "js": ["content.js"],
-        "run_at": "document_idle"
-      }
+        {
+            "matches": [
+                "https://x.com/home",
+                "https://twitter.com/home"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_idle"
+        }
     ]
-  }
+}
